@@ -1,0 +1,7 @@
+{
+  "name": "RemoteWindow",
+  "atomic": true,
+  "attrs": [
+    "WindowAnimationTarget"
+  ]
+}

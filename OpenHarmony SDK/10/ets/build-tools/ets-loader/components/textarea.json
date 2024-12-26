@@ -1,0 +1,29 @@
+{
+  "name": "TextArea",
+  "atomic": true,
+  "attrs": [
+    "placeholderColor",
+    "placeholderFont",
+    "textAlign",
+    "caretColor",
+    "onChange",
+    "onCopy",
+    "OnCut",
+    "OnPaste",
+    "fontSize",
+    "fontColor",
+    "fontStyle",
+    "fontWeight",
+    "fontFamily",
+    "inputFilter",
+    "copyOption",
+    "onEditChange",
+    "maxLength",
+    "showCounter",
+    "style",
+    "enableKeyboardOnFocus",
+    "onTextSelectionChange",
+    "onContentScroll",
+    "selectionMenuHidden"
+  ]
+}

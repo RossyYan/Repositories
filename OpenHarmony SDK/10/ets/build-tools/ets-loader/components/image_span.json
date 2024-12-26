@@ -1,0 +1,7 @@
+{
+  "name": "ImageSpan",
+  "atomic": true,
+  "attrs": [
+    "verticalAlign", "objectFit"
+  ]
+}

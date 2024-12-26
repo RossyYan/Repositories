@@ -1,0 +1,20 @@
+{
+  "name": "Search",
+  "atomic": true,
+  "attrs": [
+    "searchButton",
+    "placeholderColor",
+    "placeholderFont",
+    "textFont",
+    "onSubmit",
+    "onChange",
+    "onCopy",
+    "OnCut",
+    "OnPaste",
+    "copyOption",
+    "enableKeyboardOnFocus",
+    "onTextSelectionChange",
+    "onContentScroll",
+    "selectionMenuHidden"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "RichEditor",
+  "children": ["Span", "ImageSpan"],
+  "attrs": [
+    "onReady", "onSelect", "aboutToIMEInput",
+    "onIMEInputComplete", "aboutToDelete", "onDeleteComplete"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Animator",
+  "atomic": true,
+  "noDebugLine": true,
+  "attrs": [
+    "state", "duration", "curve", "delay", "fillMode", "iterations", "playMode", "motion",
+    "onStart", "onPause", "onRepeat", "onCancel", "onFinish", "onFrame"
+  ]
+}

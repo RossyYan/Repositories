@@ -1,0 +1,6 @@
+{
+  "name":"Select",
+  "attrs":["selected", "value", "font", "fontColor", "selectedOptionBgColor", "selectedOptionFont",
+    "selectedOptionFontColor", "optionBgColor", "optionFont", "optionFontColor", "onSelect", "menuAlign"
+  ]
+}
