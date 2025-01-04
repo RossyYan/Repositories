@@ -1,0 +1,1 @@
+"use strict";var _util=require("./util");module.exports=function(e,t){e=(0,_util.parseRequireModule)(e,this.resourcePath),this.cacheable&&this.cacheable(),this.async()(null,e,t)};
