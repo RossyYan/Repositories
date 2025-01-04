@@ -1,48 +1,75 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 
-class Book {
-private:
-  string name;
-  int count;
+typedef struct {
+  int size;
+  int length;
+  long long *element;
+} LIST;
 
-public:
-  Book(string name, int count = 0) {
-    this->name = name;
-    this->count = count;
+void Create(LIST *lst) {
+  lst->size = 10;
+  lst->length = 0;
+  lst->element = (long long *)malloc(lst->size * sizeof(long long));
+}
+
+void Input(LIST *lst, int n) {
+  if (n > lst->size) {
+    printf("输入的元素个数超过链表大小，请重新输入。\n");
+    return;
   }
-  void set_name(const string &name) { this->name = name; }
-  void set_count(const int new_count) {
-    if (new_count < 0) {
-      count = 0;
+
+  for (int i = 0; i < n; i++) {
+    scanf("%lld", &lst->element[i]);
+  }
+}
+
+void Output(LIST *lst, int m) {
+  for (int i = 0; i < lst->length; i++) {
+    printf("%lld ", lst->element[i]);
+  }
+  printf("\n");
+}
+void bubble_sort(LIST *dst, int n);
+void Add(LIST *src1, LIST *src2, LIST *dst) {
+  for (int i = 0; i < src1->length; i++) {
+    dst->element[i] = src1->element[i];
+  }
+  // 再将src2中的元素复制到dst中
+  for (int i = 0; i < src2->length; i++) {
+    dst->element[src1->length + i] = src2->element[i];
+  }
+  // 更新目标顺序表的长度，为两个源顺序表长度之和
+  dst->length = src1->length + src2->length;
+  // 调用冒泡排序函数对合并后的目标顺序表进行排序（题目中有冒泡排序函数定义）
+  bubble_sort(dst, dst->length);
+}
+void bubble_sort(LIST *dst, int n) { //冒泡排序
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - 1 - i; j++) {
+      if (dst->element[j] > dst->element[j + 1]) { //交换位置
+        int temp = dst->element[j];
+        dst->element[j] = dst->element[j + 1];
+        dst->element[j + 1] = temp;
+      }
     }
-    this -> count = new_count;
   }
-  string get_name() const { return name; }
-  int get_count() const { return count; }
-  void add_count() { count++; }
-  void remove_count() {
-    if (count > 0) {
-      count--;
-    }
-  }
-};
+}
+
+void Destroy(LIST *lst) { free(lst->element); }
 
 int main() {
-  Book book1("C++ Primer", 10), book2("Java programming");
-
-  cout << book1.get_name() << "的数量为" << book1.get_count() << endl;
-  cout << book2.get_name() << "的数量为" << book2.get_count() << endl;
-
-  book1.set_count(100);
-  book2.set_name("Python programming");
-  cout << book1.get_name() << "的数量为" << book1.get_count() << endl;
-  cout << book2.get_name() << "的数量为" << book2.get_count() << endl;
-
-  book1.add_count();
-  book2.remove_count();
-  cout << book1.get_name() << "的数量为" << book1.get_count() << endl;
-  cout << book2.get_name() << "的数量为" << book2.get_count() << endl;
-
+  LIST a, b, c;
+  Create(&a);
+  Create(&b);
+  Create(&c);
+  Input(&a);
+  Input(&b);
+  Add(&a, &b, &c);
+  Output(&c);
+  putchar('\n');
+  Destroy(&c);
+  Destroy(&b);
+  Destroy(&a);
   return 0;
 }
